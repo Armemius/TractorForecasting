@@ -1,0 +1,60 @@
+nav {
+    height: 60px;
+    width: 100%;
+    background-color: #152025;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+    position: relative;
+    padding: 30px;
+    color: white;
+    z-index: 9999;
+}
+
+nav .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 30px;
+    bottom: 0;
+    padding: 15px;
+    font-size: 30px;
+}
+
+nav .logo span {
+    margin-left: 15px;
+}
+
+nav a {
+    display: block;
+    height: 60px;
+}
+
+nav div.link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    height: 100%;
+    transition: 0.1s linear;
+    font-weight: 600;
+    opacity: 0.8;
+    color: white;
+}
+
+nav div.link:hover {
+    opacity: 1;
+}
+
+main.report-page {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+}
