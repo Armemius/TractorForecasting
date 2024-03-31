@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar.jsx";
 import MapPage from "./routes/MapPage.jsx";
 import TelemetryPage from "./routes/TelemetryPage.jsx";
 import ReportPage from "./routes/ReportPage.jsx";
+import MainPage from "./routes/MainPage.jsx";
 
 function App() {
     return (
@@ -13,7 +14,7 @@ function App() {
             <BrowserRouter>
                 <Navbar/>
                 <Routes>
-                    <Route path={MAIN_ROUTE} element={<div>Main</div>}/>
+                    <Route path={MAIN_ROUTE} element={<MainPage/>}/>
                     <Route path={MAP_ROUTE} element={<MapPage/>}/>
                     <Route path={TABLE_ROUTE} element={<TelemetryPage/>} />
                     <Route path={ABOUT_ROUTE} element={<div>About</div>} />

@@ -5,9 +5,7 @@ import {useState} from "react";
 const ReportPage = () => {
     let { id } = useParams();
 
-    const [markdown, setMarkdown] = useState(`# Report Page
-    
-    `)
+    const [markdown, setMarkdown] = useState(`# Loading Report...`)
 
     return (
         <main className="report-page">

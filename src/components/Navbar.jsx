@@ -25,11 +25,6 @@ const Navbar = () => {
                     Телеметрия
                 </div>
             </Link>
-            <Link to={TABLE_ROUTE}>
-                <div className="link">
-                    О нас
-                </div>
-            </Link>
         </nav>
     );
 };

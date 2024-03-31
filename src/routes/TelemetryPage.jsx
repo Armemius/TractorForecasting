@@ -8,8 +8,6 @@ import {api} from "../main.jsx";
 
 
 const TelemetryPage = () => {
-    const [tableData, setTableData] = useState([]);
-
     const columns = useMemo(
         () => [
             {

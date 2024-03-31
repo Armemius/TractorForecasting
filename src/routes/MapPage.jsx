@@ -8,6 +8,17 @@ import {Link} from "react-router-dom";
 const MapPage = () => {
     const [tractorList, setTractorList] = useState([])
 
+    function splitmix32(a) {
+        a |= 0;
+        a = a + 0x9e3779b9 | 0;
+        let t = a ^ a >>> 16;
+        t = Math.imul(t, 0x21f0aaad);
+        t = t ^ t >>> 15;
+        t = Math.imul(t, 0x735a2d97);
+        console.log(((t = t ^ t >>> 15) >>> 0) / 4294967296)
+        return ((t = t ^ t >>> 15) >>> 0) / 4294967296;
+    }
+
     const fetchTractorList = async () => {
         const tractorIds = (await api.get('/telemetry/tractor')).data;
         const tractorsData = (await Promise.all(tractorIds.map(tractorId =>
@@ -16,8 +27,8 @@ const MapPage = () => {
         setTractorList(tractorsData.map(it => ({
             id: it.tractorId,
             status: it.status,
-            latitude: it.tractorId.charCodeAt(0) % 40 + 40,
-            longitude: it.tractorId.charCodeAt(1) % 40 + 40
+            latitude: splitmix32(10) * 10 + 57,
+            longitude: splitmix32(15) * 20 + 30
         })))
     }
 
