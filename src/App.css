@@ -204,3 +204,46 @@ main.main-page {
         opacity: 1;
     }
 }
+
+.error-404 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 500px;
+    color: white;
+    animation: 0.7602s bang-404 ease-out infinite;
+}
+
+.bg-error-404 {
+    animation: 0.7602s bang-404-bg ease-out infinite;
+}
+
+@keyframes bang-404 {
+    from {
+        opacity: 0.05;
+    }
+
+    90% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0.05;
+    }
+}
+
+@keyframes bang-404-bg {
+    from {}
+
+    90% { background: none; }
+
+    91% {
+        background: white;
+    }
+
+    to {
+
+    }
+}

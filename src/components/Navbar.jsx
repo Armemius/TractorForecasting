@@ -1,6 +1,6 @@
 import { FaTractor } from "react-icons/fa";
 import {Link} from "react-router-dom";
-import {MAIN_ROUTE, MAP_ROUTE, TABLE_ROUTE} from "../Constants.js";
+import {MAIN_ROUTE, MAP_ROUTE, TABLE_ROUTE, TRACTOR_REPORTS_ROUTE} from "../Constants.js";
 // import TractorLogo from "../assets/tractor.webp";
 
 const Navbar = () => {
@@ -25,6 +25,11 @@ const Navbar = () => {
                     Телеметрия
                 </div>
             </Link>
+            {/*<Link to={TRACTOR_REPORTS_ROUTE}>*/}
+            {/*    <div className="link">*/}
+            {/*        Тракторы*/}
+            {/*    </div>*/}
+            {/*</Link>*/}
         </nav>
     );
 };

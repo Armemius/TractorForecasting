@@ -1,9 +1,8 @@
-const MAIN_ROUTE = '/'
-const MAP_ROUTE = '/map'
-const ABOUT_ROUTE = '/map'
-const TABLE_ROUTE = '/tractors'
+export const MAIN_ROUTE = '/'
+export const MAP_ROUTE = '/map'
+export const ABOUT_ROUTE = '/map'
+export const TABLE_ROUTE = '/telemetry'
 export const REPORT_ROUTE = '/report'
 export const REPORT_ROUTE_FULL = '/report/:id'
-const ANY_ROUTE = '*'
-
-export { MAIN_ROUTE, ABOUT_ROUTE, MAP_ROUTE, TABLE_ROUTE, ANY_ROUTE }
+export const TRACTOR_REPORTS_ROUTE = '/tractors'
+export const ANY_ROUTE = '*'

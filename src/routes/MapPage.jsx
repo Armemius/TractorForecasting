@@ -26,9 +26,9 @@ const MapPage = () => {
         ))).map(it => it.data)
         setTractorList(tractorsData.map(it => ({
             id: it.tractorId,
-            status: it.status,
-            latitude: splitmix32(10) * 10 + 57,
-            longitude: splitmix32(15) * 20 + 30
+            status: it.tractorId !== 'С1067' ? it.status : 'ERROR',
+            latitude: splitmix32(it.tractorId.hashCode()) * 10 + 57,
+            longitude: splitmix32(it.tractorId.hashCode() / 3) * 20 + 40
         })))
     }
 

@@ -11,6 +11,11 @@ const TelemetryPage = () => {
     const columns = useMemo(
         () => [
             {
+                accessorKey: '-1',
+                header: 'ID Трактора',
+                size: 300,
+            },
+            {
                 accessorKey: '0',
                 header: 'Дата и время',
                 size: 300,
@@ -82,13 +87,15 @@ const TelemetryPage = () => {
         let mergedData = [];
 
         data.forEach(item => {
+            const id = item.tractorId;
             item.telemetry.forEach(item => {
-                const parsedData = Papa.parse(column_labels + item.dataRow, {
+                const parsedData = Papa.parse(column_labels + id + ',' + item.dataRow, {
                     header: true,
                     skipEmptyLines: true
                 });
 
                 if (parsedData?.data) {
+                    console.log(parsedData);
                     mergedData = [...mergedData, ...parsedData.data];
                 }
             });
@@ -110,7 +117,7 @@ const TelemetryPage = () => {
             const tractorIds = (await api.get('/telemetry/tractor')).data;
             const tractorsData = (await Promise.all(tractorIds.map(tractorId =>
                 api.get(`/telemetry/tractor/${tractorId}`)
-            ))).map(it => it.data)
+            ))).map(((it, index) => ({...it.data, id: tractorIds[index]})))
             parseAndMergeData(tractorsData);
         }
         fetch().then();
